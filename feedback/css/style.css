@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* 
+/*
 	compile file
 */
 /* start the foundation style */
@@ -426,8 +426,8 @@ form input[type='file'] {
   display: none;
 }
 
-/* 
-	start the project modules like a pages 
+/*
+	start the project modules like a pages
 */
 body {
   background: #f2f2f2;
@@ -502,12 +502,12 @@ body {
   background-color: #e5e5e5;
 }
 .counter-action.plus {
-  background-image: url(img/ico-action-minus.png);
+  background-image: url(img/ico-action-plus.png);
   background-repeat: no-repeat;
   background-position: center;
 }
 .counter-action.minus {
-  background-image: url(img/ico-action-plus.png);
+  background-image: url(img/ico-action-minus.png);
   background-repeat: no-repeat;
   background-position: center;
 }
