@@ -62,9 +62,9 @@
             <div class="col s-4">
               <label for="text4">Длительность пребывания: <span>*</span></label>
 
-              <div class="counter clearfix">
+              <div class="counter clearfix days">
                 <button class="counter-action minus">минус</button>
-                <input type="text" name="travel-time" class="travel-time counter-input" value="0">
+                <input type="text" name="travel-time" class="travel-time counter-input" required>
                 <button class="counter-action plus">плюс</button>
               </div>
 
@@ -88,17 +88,17 @@
           <div class="row">
             <div class="col s-4">
               <label for="text7">Количество взрослых: <span>*</span></label>
-              <div class="counter clearfix adults">
+              <div class="counter clearfix adults" data-template="adult-template" data-container="adults-container">
                 <button class="counter-action minus">минус</button>
-                <input type="text" name="people-count" class="people-count counter-input" value="0">
+                <input type="number" min="1" name="people-count" class="people-count counter-input" required>
                 <button class="counter-action plus">плюс</button>
               </div>
             </div>
             <div class="col s-4">
               <label for="text8">Количество детей: <span>*</span></label>
-              <div class="counter clearfix children">
+              <div class="counter clearfix children" data-template="child-template" data-container="children-container">
                 <button class="counter-action minus">минус</button>
-                <input type="text" name="children-count" class="children-count counter-input" value="0">
+                <input type="text" name="children-count" class="children-count counter-input" required>
                 <button class="counter-action plus">плюс</button>
               </div>
             </div>
@@ -106,6 +106,8 @@
             </div>
           </div>
 
+          <div class="adults-container"></div>
+          <div class="children-container"></div>
         </div>
 
         <!-- step 3-->
@@ -214,15 +216,15 @@
     </div>
   </div>
 
-  <script id="adult-template" type="text/html">
-    <div class="row adult-name">
+  <script class="adult-template" type="text/html">
+    <div class="row name">
       <div class="col s-4">
         <label for="text8">Фамилия взрослого №<span>{{number}}</span>: <span>*</span></label>
-        <input type="text" id="text8">
+        <input type="text" id="text8" required>
       </div>
       <div class="col s-4">
         <label for="text9">Имя взрослого №<span>{{number}}</span>: <span>*</span></label>
-        <input type="text" id="text9">
+        <input type="text" id="text9" required>
       </div>
       <div class="col s-4">
         <label for="text10">Отчество взрослого №<span>{{number}}</span></label>
@@ -231,15 +233,15 @@
     </div>
   </script>
 
-  <script id="child-template" type="text/html">
-    <div class="row child-name">
+  <script class="child-template" type="text/html">
+    <div class="row name">
       <div class="col s-4">
         <label for="text14">Фамилия ребенка №<span>{{number}}</span>: <span>*</span></label>
-        <input type="text" id="text14">
+        <input type="text" id="text14" required>
       </div>
       <div class="col s-4">
         <label for="text15">Имя ребенка №<span>{{number}}</span>: <span>*</span></label>
-        <input type="text" id="text15">
+        <input type="text" id="text15" required>
       </div>
       <div class="col s-4">
         <label for="text16">Отчество ребенка №<span>{{number}}</span></label>

@@ -244,6 +244,7 @@ form {
     }*/
 }
 form input[type='text'],
+form input[type='number'],
 form textarea,
 form select,
 form input[type='password'] {
@@ -263,6 +264,7 @@ form input[type='password'] {
   border: 1px solid #f2f2f2;
 }
 form input[type='text']:focus,
+form input[type='number']:focus,
 form textarea:focus,
 form select:focus,
 form input[type='password']:focus {
@@ -273,6 +275,11 @@ form textarea.error,
 form select.error,
 form input[type='password'].error {
   border: 1px solid red;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 form label {
   cursor: pointer;
