@@ -23,10 +23,19 @@ module.exports = function(grunt) {
           showCodes: true
         }
       }
+    },
+
+    concat: {
+      dist: {
+        src: ['node_modules/mustache/mustache.min.js', 'feedback/js/form.js'],
+        dest: 'feedback/js/script.js',
+      }
     }
+
   });
 
   grunt.loadNpmTasks('grunt-lintspaces');
+  grunt.loadNpmTasks('grunt-contrib-concat');
 
   grunt.registerTask('lint', ['lintspaces']);
 };

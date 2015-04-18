@@ -244,6 +244,7 @@ form {
     }*/
 }
 form input[type='text'],
+form input[type='tel'],
 form textarea,
 form select,
 form input[type='password'] {
@@ -263,10 +264,14 @@ form input[type='password'] {
   border: 1px solid #f2f2f2;
 }
 form input[type='text']:focus,
+form input[type='tel']:focus
 form textarea:focus,
 form select:focus,
 form input[type='password']:focus {
   background: #e5e5e5;
+}
+input.invalid[type='tel']:focus {
+  background-color: #ffa1a1;
 }
 form input[type='text'].error,
 form textarea.error,
@@ -278,6 +283,28 @@ form label {
   cursor: pointer;
   padding-left: 21px;
   margin-bottom: 10px;
+}
+form label.error {
+  position: relative;
+  display: block;
+  padding: 0;
+  margin: 0;
+  font-size: 0;
+}
+input.invalid[type='tel'] ~ label:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "Пожалуйста, укажите значение цифрами";
+  width: 290px;
+  line-height: 25px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: #d56868;
+}
+input.invalid[type='tel'] {
+  background-color: #ffa1a1;
 }
 form label span {
   color: #ffa1a1;
@@ -511,7 +538,13 @@ body {
   background-repeat: no-repeat;
   background-position: center;
 }
-
+.counter-action:disabled {
+  opacity: .3;
+  cursor: default;
+}
+.counter-action:disabled:hover {
+  background-color: #f2f2f2;
+}
 .counter-input {
   width: 160px !important;
   position: relative;
